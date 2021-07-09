@@ -218,7 +218,8 @@ static int __init nvidiabl_init(void)
 		if (strncasecmp(bl_type, backlight_type_ids[iii].id, sizeof(bl_type)) == 0) {
 #else
  		if (strnicmp(bl_type, backlight_type_ids[iii].id, sizeof(bl_type)) == 0) {
-#endif			props.type = backlight_type_ids[iii].type;
+#endif
+			props.type = backlight_type_ids[iii].type;
 			printk(KERN_INFO "nvidiabl: backlight type is %s\n", backlight_type_ids[iii].id);
 		}
 	}

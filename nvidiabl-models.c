@@ -13,6 +13,12 @@
  * (at your option) any later version.
  */
 
+#include <linux/version.h>
+/* ioremap on >=5.7 is equivalent to ioremap_nocache */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,7,0)
+#define ioremap_nocache ioremap
+#endif
+
 #include "nvidiabl-models.h"
 
 /* Register constants */
